@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This tutorial is based on the book "APIs on Rails" by Abraham Kuri and can be found at http://apionrails.icalialabs.com/.
 
-Things you may want to cover:
+Copyright and License info can be found at http://apionrails.icalialabs.com/book.
 
-* Ruby version
+Rails version is 4.2.0, Ruby version is 2.1.2p95.
 
-* System dependencies
+The final application will scratch the surface of being a market place where users will be able to place orders, upload products and more.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Chapter 2: The API.
