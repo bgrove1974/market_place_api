@@ -1,6 +1,6 @@
 == README
 
-This tutorial is based on the book "APIs on Rails" by Abraham Kuri and can be found at http://apionrails.icalialabs.com/.
+This tutorial is based on the book "APIs on Rails" by Abraham Kuri and can be found at http://apionrails.icalialabs.com.
 
 Copyright and License info can be found at http://apionrails.icalialabs.com/book.
 
