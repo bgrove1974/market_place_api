@@ -11,3 +11,6 @@ Rails version is 4.0.2, Ruby version is 2.1.2p95.
 The final application will scratch the surface of being a market place where users will be able to place orders, upload products and more.
 
 Chapter 4: Refactoring Tests
+
+Roadblock: I cannot get the tests in /spec/controllers/api/v1/users_controller_spec.rb to pass.
+I cloned the chapter 3 branch and set it as master, but the problem persists.
