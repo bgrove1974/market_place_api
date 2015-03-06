@@ -4,7 +4,7 @@ describe Api::V1::UsersController do
   before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1" }
 
   describe "GET #show" do
-    before(:each) do 
+    before(:each) do
       @user = FactoryGirl.create :user
       get :show, id: @user.id, format: :json
     end
@@ -19,7 +19,7 @@ describe Api::V1::UsersController do
 
   describe "POST #create" do
 
-    context "when is successfully created" do
+    context "when  it is successfully created" do
       before(:each) do
         @user_attributes = FactoryGirl.attributes_for :user
         post :create, { user: @user_attributes }, format: :json
@@ -33,18 +33,18 @@ describe Api::V1::UsersController do
       it { should respond_with 201 }
     end
 
-    context "when is not created" do
+    context "when it is not created" do
       before(:each) do
         @invalid_user_attributes = { password: "12345678", password_confirmation: "12345678" } #notice I'm not including the email
         post :create, { user: @invalid_user_attributes }, format: :json
       end
 
-      it "renders an errors json" do
+      it "renders json errors" do
         user_response = JSON.parse(response.body, symbolize_names: true)
         expect(user_response).to have_key(:errors)
       end
 
-      it "renders the json errors on whye the user could not be created" do
+      it "renders json errors on why the user could not be created" do
         user_response = JSON.parse(response.body, symbolize_names: true)
         expect(user_response[:errors][:email]).to include "can't be blank"
       end
@@ -58,7 +58,7 @@ describe Api::V1::UsersController do
       @user = FactoryGirl.create :user
     end
 
-    context "when is successfully updated" do
+    context "when it is successfully updated" do
       before(:each) do
         patch :update, { id: @user.id, user: { email: "newmail@example.com" } }, format: :json
       end
@@ -71,17 +71,17 @@ describe Api::V1::UsersController do
       it { should respond_with 200 }
     end
 
-    context "when is not created" do
+    context "when it is not created" do
       before(:each) do
         patch :update, { id: @user.id, user: { email: "bademail.com" } }, format: :json
       end
 
-      it "renders an errors json" do
+      it "renders json errors" do
         user_response = JSON.parse(response.body, symbolize_names: true)
         expect(user_response).to have_key(:errors)
       end
 
-      it "renders the json errors on whye the user could not be created" do
+      it "renders json errors on why the user could not be created" do
         user_response = JSON.parse(response.body, symbolize_names: true)
         expect(user_response[:errors][:email]).to include "is invalid"
       end
